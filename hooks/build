@@ -1,10 +1,11 @@
 #!/bin/bash
 
-PYTHON_VERSION=$(echo $DOCKER_TAG | cut -d "-" -f2)
+#PYTHON_VERSION=$(echo $DOCKER_TAG | cut -d "-" -f2)
+PYTHON_VERSION=$DOCKER_TAG
 
 if [ $DOCKER_TAG == "latest" ]
 then
-  docker build . --build-arg PYTHON_VERSION=${DOCKER_TAG} -t ${IMAGE_NAME}
+  docker build . --build-arg PYTHON_TAG=${DOCKER_TAG} -t ${IMAGE_NAME}
 else
-  docker build . --build-arg PYTHON_VERSION=${PYTHON_VERSION} -t ${IMAGE_NAME}
+  docker build . --build-arg PYTHON_TAG=${PYTHON_VERSION}-buster -t ${IMAGE_NAME}
 fi

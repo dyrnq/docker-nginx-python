@@ -27,7 +27,7 @@ docker run -d -e TZ=Asia/Shanghai dyrnq/nginx-python:3.8.8
 ## build
 
 ```bash
-docker build --build-arg PYTHON_VERSION=3.8.8 -t IMAGE:TAG .
+docker build --build-arg PYTHON_TAG=3.8.8-buster -t IMAGE:TAG .
 ```
 
 ## ref
